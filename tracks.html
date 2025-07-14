@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tracks</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: url('https://i.postimg.cc/k52RnnHh/backgrounf.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #1e2a78;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    .order-btn {
+      margin-top: 15px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .order-btn:hover {
+      background-color: #1ebc59;
+    }
+
+    .form-popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .form-popup input,
+    .form-popup select,
+    .form-popup textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .form-popup textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .form-popup button {
+      width: 48%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+      color: black;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .product-card {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+        gap: 16px;
+      }
+
+      .product-card {
+        max-width: 100%;
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .product-card img {
+        max-height: 220px;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+
+      .order-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .form-popup {
+        padding: 15px;
+        font-size: 14px;
+      }
+
+      .form-popup input,
+      .form-popup select,
+      .form-popup textarea {
+        font-size: 14px;
+        padding: 6px;
+      }
+
+      .form-popup button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="https://i.postimg.cc/pXYXGsCv/t1.jpg" alt="Tracks 1">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 1','https://i.postimg.cc/pXYXGsCv/t1.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/05GsPbwd/t2.jpg" alt="Tracks 2">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 2','https://i.postimg.cc/05GsPbwd/t2.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/50MRRSnc/t3.jpg" alt="Tracks 3">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 3','https://i.postimg.cc/50MRRSnc/t3.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/Y9pxFndS/t4.jpg" alt="Tracks 4">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 4','https://i.postimg.cc/Y9pxFndS/t4.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/284FHNg5/t5.jpg" alt="Tracks 5">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 5','https://i.postimg.cc/284FHNg5/t5.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/5yyTBNsj/t6.jpg" alt="Tracks 6">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 6','https://i.postimg.cc/5yyTBNsj/t6.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/W33XKYgH/t7.jpg" alt="Tracks 7">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 7','https://i.postimg.cc/W33XKYgH/t7.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/MZBF84gC/t8.jpg" alt="Tracks 8">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 8','https://i.postimg.cc/MZBF84gC/t8.jpg')">Order Now</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/sxPmZFr1/t9.jpg" alt="Tracks 9">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Tracks 9','https://i.postimg.cc/sxPmZFr1/t9.jpg')">Order Now</button>
+  </div>
+
+  <!-- Order Form -->
+  <div id="orderForm" class="form-popup">
+    <h3>Enter Order Details</h3>
+    <input type="text" id="custName" placeholder="Your Name" required />
+    <input type="tel" id="custPhone" placeholder="Phone Number" required />
+    <select id="custSize">
+      <option value="">Select Size</option>
+      <option value="L">L - ₹230</option>
+      <option value="XL">XL - ₹230</option>
+      <option value="XXL">XXL - ₹230</option>
+      <option value="XXXL">XXL - ₹250</option>
+    </select>
+    <input type="number" id="custQty" placeholder="Quantity" min="1" required />
+    <textarea id="custAddress" placeholder="Delivery Address" required></textarea>
+    <button class="submit-btn" onclick="submitOrder()">Send via WhatsApp</button>
+    <button class="cancel-btn" onclick="closeForm()">Cancel</button>
+  </div>
+
+  <!-- Contact Box -->
+  <div style="position: fixed; bottom: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px;">
+    <strong>Need Help?</strong><br />
+    <a href="tel:9500463146">Call Us</a> |
+    <a href="https://wa.me/919500463146" target="_blank">Chat on WhatsApp</a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    let selectedProduct = "";
+    let selectedImage = "";
+
+    function openForm(productName, imageUrl) {
+      selectedProduct = productName;
+      selectedImage = imageUrl;
+      document.getElementById("orderForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("orderForm").style.display = "none";
+    }
+
+    function submitOrder() {
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const size = document.getElementById("custSize").value;
+      const qty = document.getElementById("custQty").value;
+      const address = document.getElementById("custAddress").value.trim();
+
+      if (!name || !phone || !size || !qty || !address) {
+        alert("Please fill all the details.");
+        return;
+      }
+
+      const price = size === "XXL" ? 250 : 230;
+      const total = price * parseInt(qty);
+
+      const message = `Hi, I would like to order:
+
+Product: ${selectedProduct}
+Size: ${size}
+Quantity: ${qty}
+Price: ₹${price} each
+Total: ₹${total}
+
+Image: ${selectedImage}
+Name: ${name}
+Phone: ${phone}
+Address: ${address}`;
+
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappNumber = "919500463146";
+      const url = https://wa.me/${whatsappNumber}?text=${encodedMsg};
+
+      window.open(url, "_blank");
+      closeForm();
+    }
+  </script>
+
+</body>
+</html>

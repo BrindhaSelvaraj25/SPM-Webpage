@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NS Tracks & Lowers</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      background: url('https://i.postimg.cc/k52RnnHh/backgrounf.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #1e2a78;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .order-btn {
+      margin-top: 12px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .order-btn:hover {
+      background-color: #1ebc59;
+    }
+
+    .form-popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .form-popup input,
+    .form-popup select,
+    .form-popup textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .form-popup textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .form-popup button {
+      width: 48%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+      color: black;
+    }
+
+    /* Help Box */
+    .contact-box {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      z-index: 998;
+    }
+
+    .contact-box a {
+      text-decoration: none;
+      color: #1e2a78;
+      margin: 0 4px;
+      font-weight: bold;
+    }
+
+    /* Desktop Styling */
+    @media (min-width: 768px) {
+      body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .product-card {
+        width: 300px;
+      }
+
+      .order-btn {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="https://i.postimg.cc/zfK2sw8d/ns-1.jpg" alt="NS Tracks & Lowers 1">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 1','https://i.postimg.cc/zfK2sw8d/ns-1.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/d3H524j0/ns-2.jpg" alt="NS Tracks & Lower 2">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 2','https://i.postimg.cc/d3H524j0/ns-2.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/1zhJrgwD/ns-3.jpg" alt="NS Tracks & Lower 3">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 3','https://i.postimg.cc/1zhJrgwD/ns-3.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/vTBzZ5ww/ns-4.jpg" alt="NS Tracks & Lower 4">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 4','https://i.postimg.cc/vTBzZ5ww/ns-4.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/g0HqygYP/ns-5.jpg" alt="NS Tracks & Lower 5">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 5','https://i.postimg.cc/g0HqygYP/ns-5.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/RZrcjkhB/ns-6.jpg" alt="NS Tracks & Lower 6">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 6','https://i.postimg.cc/RZrcjkhB/ns-6.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/htb7NhNL/ns-7.jpg" alt="NS Tracks & Lower 7">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('NS Tracks & Lowers 7','https://i.postimg.cc/htb7NhNL/ns-7.jpg')">Order Now</button>
+  </div>
+
+  <!-- Order Form -->
+  <div id="orderForm" class="form-popup">
+    <h3>Enter Order Details</h3>
+    <input type="text" id="custName" placeholder="Your Name" required />
+    <input type="tel" id="custPhone" placeholder="Phone Number" required />
+    <select id="custSize">
+      <option value="">Select Size</option>
+      <option value="S">S - ₹250</option>
+      <option value="M">M - ₹250</option>
+      <option value="L">L - ₹250</option>
+      <option value="XL">XL - ₹250</option>
+      <option value="XXL">XXL - ₹250</option>
+    </select>
+    <input type="number" id="custQty" placeholder="Quantity" min="1" required />
+    <textarea id="custAddress" placeholder="Delivery Address" required></textarea>
+    <div style="display: flex; justify-content: space-between;">
+      <button class="submit-btn" onclick="submitOrder()">Send via WhatsApp</button>
+      <button class="cancel-btn" onclick="closeForm()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Contact Box -->
+  <div class="contact-box">
+    <strong>Need Help?</strong><br />
+    <a href="tel:9500463146">Call Us</a> |
+    <a href="https://wa.me/919500463146" target="_blank">WhatsApp</a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let selectedProduct = "";
+    let selectedImage = "";
+
+    function openForm(productName, imageUrl) {
+      selectedProduct = productName;
+      selectedImage = imageUrl;
+      document.getElementById("orderForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("orderForm").style.display = "none";
+    }
+
+    function submitOrder() {
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const size = document.getElementById("custSize").value;
+      const qty = document.getElementById("custQty").value;
+      const address = document.getElementById("custAddress").value.trim();
+
+      if (!name || !phone || !size || !qty || !address) {
+        alert("Please fill all the details.");
+        return;
+      }
+
+      const price = 250;
+      const total = price * parseInt(qty);
+
+      const message = Hi, I would like to order:\n\nProduct: ${selectedProduct}\nSize: ${size}\nQuantity: ${qty}\nPrice: ₹${price} each\nTotal: ₹${total}\n\nImage: ${selectedImage}\nName: ${name}\nPhone: ${phone}\nAddress: ${address};
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappNumber = "919500463146";
+      const url = https://wa.me/${whatsappNumber}?text=${encodedMsg};
+      window.open(url, "_blank");
+      closeForm();
+    }
+  </script>
+</body>
+</html>

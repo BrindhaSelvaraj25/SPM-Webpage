@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPM MADHAN SPORTS WEARS</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: url('https://i.postimg.cc/50sX3BBk/image-1.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 40px;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .item a, .toggle-label {
+      text-decoration: none;
+      color: #1e2a78;
+      font-weight: bold;
+      font-size: 16px;
+      display: block;
+    }
+
+    .sub-buttons {
+      margin-top: 15px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sub-buttons a {
+      padding: 10px;
+      background-color: #1e2a78;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .sub-buttons a:hover {
+      background-color: #3242a8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"><a href="NSTrack.html">NS Track & Lowers</a></div>
+    <div class="item"><a href="kabadi.html">Kabaddi T-Shirts & Shorts</a></div>
+    <div class="item"><a href="SPMsport.html">SPM Madhan Sports Plain T-Shirt</a></div>
+    <div class="item"><a href="tracks.html">Tracks</a></div>
+    <div class="item"><a href="tyka.html">TYKA</a></div>
+
+    <!-- Adidas Toggle Button -->
+    <div class="item" onclick="toggleAdidas()">
+      <span class="toggle-label">ADIDAS</span>
+      <div class="sub-buttons" id="adidasButtons">
+        <a href="adidastshirts.html">T-Shirts</a>
+        <a href="adidasshort.html">Lowers & Shorts</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="puma.html">PUMA</a>
+      <!-- <a href="kabadi.html">Kabaddi T-Shirts & Shorts></a>
+      <a href="tracks.html">Tracks</a> -->
+    </div>
+
+  </div>
+
+  <script>
+    function toggleAdidas() {
+      var btns = document.getElementById("adidasButtons");
+      btns.style.display = (btns.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>

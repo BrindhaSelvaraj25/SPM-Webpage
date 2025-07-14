@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TYKA Sports Wear</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://i.postimg.cc/k52RnnHh/backgrounf.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #1e2a78;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .order-btn {
+      margin-top: 12px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .order-btn:hover {
+      background-color: #1ebc59;
+    }
+
+    .form-popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .form-popup input,
+    .form-popup select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .form-popup button {
+      width: 48%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+      color: black;
+    }
+
+    @media (min-width: 768px) {
+      .product-card {
+        width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="https://i.postimg.cc/CLwQZ1F3/a1.jpg" alt="Lowers & Shorts 1">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 1', 'https://i.postimg.cc/CLwQZ1F3/a1.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/QCZxg76k/a2.jpg" alt="Lowers & Shorts 2">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 2', 'https://i.postimg.cc/QCZxg76k/a2.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/fR92p050/a3.jpg" alt="Lowers & Shorts 3">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 3', 'https://i.postimg.cc/fR92p050/a3.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/mgjw0NCk/a4.jpg" alt="Lowers & Shorts 4">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 4', 'https://i.postimg.cc/mgjw0NCk/a4.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/TwVh4Q5H/a5.jpg" alt="Lowers & Shorts 5">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 5', 'https://i.postimg.cc/TwVh4Q5H/a5.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/26kfCxXt/a6.jpg" alt="Lowers & Shorts 6">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 6', 'https://i.postimg.cc/26kfCxXt/a6.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/1tqYhVyd/a7.jpg" alt="Lowers & Shorts 7">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 7', 'https://i.postimg.cc/1tqYhVyd/a7.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/x87CkZw8/a8.jpg" alt="Lowers & Shorts 8">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 8', 'https://i.postimg.cc/x87CkZw8/a8.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/SxDxW9wv/ad-1.jpg" alt="Lowers & Shorts 9">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 9', 'https://i.postimg.cc/SxDxW9wv/ad-1.jpg')">Order Now</button>
+  </div>
+  <div class="product-card">
+    <img src="https://i.postimg.cc/Kv5G2Lv8/ad-2.jpg" alt="Lowers & Shorts 10">
+    <div class="price">Size available: S, M, L, XL, XXL</div>
+    <button class="order-btn" onclick="openForm('Lowers & Shorts 10', 'https://i.postimg.cc/Kv5G2Lv8/ad-2.jpg')">Order Now</button>
+  </div>
+
+  <!-- Order Form -->
+  <div id="orderForm" class="form-popup">
+    <h3>Enter Order Details</h3>
+    <input type="text" id="custName" placeholder="Your Name" required>
+    <input type="tel" id="custPhone" placeholder="Phone Number" required>
+    <input type="text" id="custAddress" placeholder="Delivery Address" required>
+    <select id="custSize" required>
+      <option value="">Select Size</option>
+      <option value="S">S - ₹220</option>
+      <option value="M">M - ₹220</option>
+      <option value="L">L - ₹220</option>
+      <option value="XL">XL - ₹220</option>
+      <option value="XXL">XXL - ₹220</option>
+    </select>
+    <input type="number" id="custQty" placeholder="Quantity" min="1" required>
+    <button class="submit-btn" onclick="submitOrder()">Send via WhatsApp</button>
+    <button class="cancel-btn" onclick="closeForm()">Cancel</button>
+  </div>
+
+  <!-- Fixed Contact Box -->
+  <div style="position: fixed; bottom: 10px; left: 10px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 8px;">
+    <strong>Need Help?</strong><br>
+    <a href="tel:9500463146">Call Us</a> |
+    <a href="https://wa.me/919500463146" target="_blank">Chat on WhatsApp</a>
+  </div>
+
+  <script>
+    let selectedProduct = "";
+    let selectedImage = "";
+
+    function openForm(productName, imageUrl) {
+      selectedProduct = productName;
+      selectedImage = imageUrl;
+      document.getElementById("orderForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("orderForm").style.display = "none";
+    }
+
+    function submitOrder() {
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const address = document.getElementById("custAddress").value.trim();
+      const size = document.getElementById("custSize").value;
+      const qty = document.getElementById("custQty").value;
+
+      if (!name || !phone || !address || !size || !qty) {
+        alert("Please fill all the details.");
+        return;
+      }
+
+      const price = 220;
+      const total = price * parseInt(qty);
+
+      const message = Hi, I would like to order:\n\n🛍 Product: ${selectedProduct}\n📏 Size: ${size}\n🔢 Quantity: ${qty}\n💰 Price: ₹${price} each\n💵 Total: ₹${total}\n\n🖼 Image: ${selectedImage}\n👤 Name: ${name}\n📱 Phone: ${phone}\n🏠 Address: ${address};
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappNumber = "9500463146";
+      const url = https://wa.me/91${whatsappNumber}?text=${encodedMsg};
+
+      window.open(url, "_blank");
+      closeForm();
+    }
+  </script>
+</body>
+</html>
